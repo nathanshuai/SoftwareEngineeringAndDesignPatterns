@@ -1,5 +1,5 @@
 ﻿// initialize a base-level user
-User user = new User
+Client user = new User
 {
     Username = "john_wiliam",
     Email = "john@example.com"
@@ -10,12 +10,12 @@ Console.WriteLine(user.GetDescription());
 
 // then add decorators
 // Creating a badge decorator for reputation
-Client User = new ReputationBadgeDecorator(user);
+user = new ReputationBadgeDecorator(user);
 Console.WriteLine("After the user get Reputation Badge decorating");
 
 Console.WriteLine();
 // Displaying user information with badges
-Console.WriteLine(User.GetDescription());
+Console.WriteLine(user.GetDescription());
 
 
 // ABSTRACT COMPONENT
@@ -75,7 +75,6 @@ public class ReputationBadgeDecorator : BadgeDecorator
 
     public override string GetBadges()
     {
-        // Simulating a reputation badge
         return "Golden Badge";
     }
 }
